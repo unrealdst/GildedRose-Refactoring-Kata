@@ -11,7 +11,7 @@ namespace csharp
         [Test]
         public void ThirtyDays()
         {
-            var lines = File.ReadAllLines("ThirtyDays.txt");
+            string[] lines = File.ReadAllLines("ThirtyDays.txt");
 
             StringBuilder fakeoutput = new StringBuilder();
             Console.SetOut(new StringWriter(fakeoutput));
@@ -20,10 +20,16 @@ namespace csharp
             Program.Main(new string[] { });
             String output = fakeoutput.ToString();
 
-            var outputLines = output.Split('\n');
+            string[] outputLines = output.Split('\n');
+            string currentDay = "";
             for(var i = 0; i<Math.Min(lines.Length, outputLines.Length); i++) 
             {
-                Assert.AreEqual(lines[i], outputLines[i]);
+                if(lines[i].Contains("- day"))
+                {
+                    currentDay = lines[i];
+                }
+                outputLines[i] = outputLines[i].TrimEnd('\r');
+                Assert.AreEqual(lines[i], outputLines[i],message:currentDay);
             }
         }
     }

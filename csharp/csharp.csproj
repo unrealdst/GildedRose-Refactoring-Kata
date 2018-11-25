@@ -65,6 +65,13 @@
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemPriceMath\IncreasingPriceEngine.cs" />
+    <Compile Include="ItemPriceMath\DefaultPriceEnigne.cs" />
+    <Compile Include="ItemPriceMath\GlobalMathEngineConfig.cs" />
+    <Compile Include="ItemPriceMath\IItemPriceEngin.cs" />
+    <Compile Include="ItemPriceMath\LegendaryPriceEngine.cs" />
+    <Compile Include="ItemPriceMath\PriceEngineFactory.cs" />
+    <Compile Include="ItemPriceMath\TicketpriceEngine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
